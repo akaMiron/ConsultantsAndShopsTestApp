@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ConsultantsAndStoresDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblConsultant">
+          <Key>
+            <PropertyRef Name="cons_Id" />
+          </Key>
+          <Property Name="cons_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cons_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cons_LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="cons_StoreId" Type="int" />
+          <Property Name="cons_AssignmentDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblStore">
+          <Key>
+            <PropertyRef Name="st_Id" />
+          </Key>
+          <Property Name="st_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="st_Address" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tblConsultant_TO_tblStore">
+          <End Role="tblStore" Type="Self.tblStore" Multiplicity="0..1" />
+          <End Role="tblConsultant" Type="Self.tblConsultant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStore">
+              <PropertyRef Name="st_Id" />
+            </Principal>
+            <Dependent Role="tblConsultant">
+              <PropertyRef Name="cons_StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConsultantsAndStoresDBModelStoreContainer">
+          <EntitySet Name="tblConsultant" EntityType="Self.tblConsultant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStore" EntityType="Self.tblStore" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblConsultant_TO_tblStore" Association="Self.FK_tblConsultant_TO_tblStore">
+            <End Role="tblStore" EntitySet="tblStore" />
+            <End Role="tblConsultant" EntitySet="tblConsultant" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConsultantsAndStoresDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblConsultant">
+          <Key>
+            <PropertyRef Name="cons_Id" />
+          </Key>
+          <Property Name="cons_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cons_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cons_LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cons_StoreId" Type="Int32" />
+          <Property Name="cons_AssignmentDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblStore" Relationship="Self.FK_tblConsultant_TO_tblStore" FromRole="tblConsultant" ToRole="tblStore" />
+        </EntityType>
+        <EntityType Name="tblStore">
+          <Key>
+            <PropertyRef Name="st_Id" />
+          </Key>
+          <Property Name="st_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="st_Address" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblConsultant" Relationship="Self.FK_tblConsultant_TO_tblStore" FromRole="tblStore" ToRole="tblConsultant" />
+        </EntityType>
+        <Association Name="FK_tblConsultant_TO_tblStore">
+          <End Role="tblStore" Type="Self.tblStore" Multiplicity="0..1" />
+          <End Role="tblConsultant" Type="Self.tblConsultant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStore">
+              <PropertyRef Name="st_Id" />
+            </Principal>
+            <Dependent Role="tblConsultant">
+              <PropertyRef Name="cons_StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConsultantsAndStoresDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblConsultant" EntityType="Self.tblConsultant" />
+          <EntitySet Name="tblStore" EntityType="Self.tblStore" />
+          <AssociationSet Name="FK_tblConsultant_TO_tblStore" Association="Self.FK_tblConsultant_TO_tblStore">
+            <End Role="tblStore" EntitySet="tblStore" />
+            <End Role="tblConsultant" EntitySet="tblConsultant" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConsultantsAndStoresDBModelStoreContainer" CdmEntityContainer="ConsultantsAndStoresDBEntities">
+          <EntitySetMapping Name="tblConsultant">
+            <EntityTypeMapping TypeName="ConsultantsAndStoresDBModel.tblConsultant">
+              <MappingFragment StoreEntitySet="tblConsultant">
+                <ScalarProperty Name="cons_Id" ColumnName="cons_Id" />
+                <ScalarProperty Name="cons_Name" ColumnName="cons_Name" />
+                <ScalarProperty Name="cons_LastName" ColumnName="cons_LastName" />
+                <ScalarProperty Name="cons_StoreId" ColumnName="cons_StoreId" />
+                <ScalarProperty Name="cons_AssignmentDate" ColumnName="cons_AssignmentDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStore">
+            <EntityTypeMapping TypeName="ConsultantsAndStoresDBModel.tblStore">
+              <MappingFragment StoreEntitySet="tblStore">
+                <ScalarProperty Name="st_Id" ColumnName="st_Id" />
+                <ScalarProperty Name="st_Name" ColumnName="st_Name" />
+                <ScalarProperty Name="st_Address" ColumnName="st_Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,170 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj",
+        "projectName": "CAS.Business",
+        "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj",
+        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj": {
+                "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj"
+              },
+              "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj": {
+                "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Ninject": {
+              "target": "Package",
+              "version": "[3.3.4, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj",
+        "projectName": "CAS.DataStorage",
+        "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj",
+        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj",
+        "projectName": "CAS.Data",
+        "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj",
+        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj": {
+                "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Ninject": {
+              "target": "Package",
+              "version": "[3.3.4, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

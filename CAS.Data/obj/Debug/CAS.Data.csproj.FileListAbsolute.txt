@@ -1,0 +1,12 @@
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\CAS.Data.dll
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\CAS.Data.pdb
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\EntityFramework.dll
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\Ninject.dll
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\CAS.DataStorage.dll
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\CAS.DataStorage.pdb
+C:\Users\Professional\source\repos\CASSln\CAS.Data\bin\Debug\CAS.DataStorage.dll.config
+C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.csprojAssemblyReference.cache
+C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.csproj.CopyComplete
+C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.dll
+C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.pdb

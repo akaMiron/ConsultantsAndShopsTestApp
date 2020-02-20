@@ -1,0 +1,8 @@
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\bin\Debug\CAS.DataStorage.dll.config
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\bin\Debug\CAS.DataStorage.dll
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\bin\Debug\CAS.DataStorage.pdb
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\bin\Debug\EntityFramework.dll
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\obj\Debug\CAS.DataStorage.csproj.CopyComplete
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\obj\Debug\CAS.DataStorage.dll
+C:\Users\Professional\source\repos\CASSln\CAS.DataStorage\obj\Debug\CAS.DataStorage.pdb
