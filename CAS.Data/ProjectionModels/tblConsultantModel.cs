@@ -10,7 +10,6 @@ namespace CAS.Data.ProjectionModels
         public string cons_LastName { get; set; }
         public int? cons_StoreId { get; set; }
         public DateTime? cons_AssignmentDate { get; set; }
-        public tblStore cons_Store { get; set; }
 
         public tblConsultant GetRecordData()
         {
@@ -20,8 +19,7 @@ namespace CAS.Data.ProjectionModels
                 cons_Name = cons_Name,
                 cons_LastName = cons_LastName,
                 cons_StoreId = cons_StoreId,
-                cons_AssignmentDate = cons_AssignmentDate,
-                tblStore = cons_Store
+                cons_AssignmentDate = cons_AssignmentDate != DateTime.MinValue ? cons_AssignmentDate : null
             };
         }
     }

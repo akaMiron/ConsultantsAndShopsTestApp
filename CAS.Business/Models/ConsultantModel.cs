@@ -1,4 +1,5 @@
 ﻿using CAS.DataStorage;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,6 @@ namespace CAS.Business.Models
         public string Name { get; set; }
         public string LastName { get; set; }
         public int? StoreId { get; set; }
-        public DateTime? AssignmentDate { get; set; }
-        public tblStore Store { get; set; }
+        public string AssignmentDate { get; set; }
     }
 }

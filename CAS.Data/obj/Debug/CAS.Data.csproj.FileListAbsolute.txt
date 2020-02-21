@@ -10,3 +10,15 @@ C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.csprojAsse
 C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.csproj.CopyComplete
 C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.dll
 C:\Users\Professional\source\repos\CASSln\CAS.Data\obj\Debug\CAS.Data.pdb
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\obj\Debug\CAS.Data.csprojAssemblyReference.cache
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\obj\Debug\CAS.Data.dll
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\obj\Debug\CAS.Data.pdb
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\CAS.Data.dll
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\CAS.Data.pdb
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\EntityFramework.dll
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\Ninject.dll
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\CAS.DataStorage.dll
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\CAS.DataStorage.pdb
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\bin\Debug\CAS.DataStorage.dll.config
+C:\Users\Viktor\Desktop\ConsultantsAndShopsTestApp\CAS.Data\obj\Debug\CAS.Data.csproj.CopyComplete

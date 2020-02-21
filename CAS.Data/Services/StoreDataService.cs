@@ -43,11 +43,10 @@ namespace CAS.Data.Services
                               {
                                   st_Id = store.st_Id,
                                   st_Name = store.st_Name,
-                                  st_Address = store.st_Address,
-                                  st_Consultants = store.tblConsultant
+                                  st_Address = store.st_Address
                               }).AsQueryable();
 
-                return result.FirstOrDefault();
+                return result.Where(x => x.st_Id == id).FirstOrDefault();
             }
         }
 
@@ -60,8 +59,7 @@ namespace CAS.Data.Services
                               {
                                   st_Id = store.st_Id,
                                   st_Name = store.st_Name,
-                                  st_Address = store.st_Address,
-                                  st_Consultants = store.tblConsultant
+                                  st_Address = store.st_Address
                               }).AsQueryable();
 
                 return result.ToArray();

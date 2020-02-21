@@ -16,8 +16,7 @@ namespace CAS.Business.Translators
             {
                 Id = dto.st_Id,
                 Name = dto.st_Name,
-                Address = dto.st_Address,
-                Consultants = dto.st_Consultants
+                Address = dto.st_Address
             };
         }
 
@@ -27,8 +26,7 @@ namespace CAS.Business.Translators
             {
                 st_Id = storeModel.Id,
                 st_Name = storeModel.Name,
-                st_Address = storeModel.Address,
-                st_Consultants = storeModel.Consultants
+                st_Address = storeModel.Address
             };
         }
     }

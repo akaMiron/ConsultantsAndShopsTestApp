@@ -1,10 +1,7 @@
 ﻿using CAS.Data.ProjectionModels;
 using CAS.DataStorage;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CAS.Data.Services
 {
@@ -47,9 +44,8 @@ namespace CAS.Data.Services
                                   cons_Name = consultant.cons_Name,
                                   cons_LastName = consultant.cons_LastName,
                                   cons_StoreId = consultant.cons_StoreId,
-                                  cons_AssignmentDate = consultant.cons_AssignmentDate,
-                                  cons_Store = consultant.tblStore
-                              }).AsQueryable();
+                                  cons_AssignmentDate = consultant.cons_AssignmentDate
+                              }).Where(cons => cons.cons_Id == id).AsQueryable();
 
                 return result.FirstOrDefault();
             }
@@ -67,7 +63,6 @@ namespace CAS.Data.Services
                                   cons_LastName = consultant.cons_LastName,
                                   cons_StoreId = consultant.cons_StoreId,
                                   cons_AssignmentDate = consultant.cons_AssignmentDate,
-                                  cons_Store = consultant.tblStore
                               }).AsQueryable();
 
                 return result.ToArray();

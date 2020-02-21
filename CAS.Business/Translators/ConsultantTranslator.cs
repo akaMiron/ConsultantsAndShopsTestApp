@@ -17,9 +17,8 @@ namespace CAS.Business.Translators
                 Id = dto.cons_Id,
                 Name = dto.cons_Name,
                 LastName = dto.cons_LastName,
-                AssignmentDate = dto.cons_AssignmentDate,
-                StoreId = dto.cons_StoreId,
-                Store = dto.cons_Store
+                AssignmentDate = dto.cons_AssignmentDate.ToString(),
+                StoreId = dto.cons_StoreId
             };
         }
 
@@ -30,9 +29,8 @@ namespace CAS.Business.Translators
                 cons_Id = storeModel.Id,
                 cons_Name = storeModel.Name,
                 cons_LastName = storeModel.LastName,
-                cons_AssignmentDate = storeModel.AssignmentDate,
-                cons_StoreId = storeModel.StoreId,
-                cons_Store = storeModel.Store
+                cons_AssignmentDate = storeModel.AssignmentDate != null ? (DateTime?)DateTime.Parse(storeModel.AssignmentDate) : null,
+                cons_StoreId = storeModel.StoreId
             };
         }
     }

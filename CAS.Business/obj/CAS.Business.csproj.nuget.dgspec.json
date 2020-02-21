@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj": {}
+    "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Business\\CAS.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj": {
+    "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Business\\CAS.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Business\\CAS.Business.csproj",
         "projectName": "CAS.Business",
-        "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\CAS.Business.csproj",
-        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Business\\obj\\",
+        "projectPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Business\\CAS.Business.csproj",
+        "packagesPath": "C:\\Users\\Viktor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Business\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Viktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj": {
-                "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj"
+              "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\CAS.DataStorage.csproj": {
+                "projectPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\CAS.DataStorage.csproj"
               },
-              "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj": {
-                "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj"
+              "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Data\\CAS.Data.csproj": {
+                "projectPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Data\\CAS.Data.csproj"
               }
             }
           }
@@ -41,6 +41,14 @@
       "frameworks": {
         "net472": {
           "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
             "Ninject": {
               "target": "Package",
               "version": "[3.3.4, )"
@@ -60,18 +68,18 @@
         }
       }
     },
-    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj": {
+    "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\CAS.DataStorage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj",
+        "projectUniqueName": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\CAS.DataStorage.csproj",
         "projectName": "CAS.DataStorage",
-        "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj",
-        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\obj\\",
+        "projectPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\CAS.DataStorage.csproj",
+        "packagesPath": "C:\\Users\\Viktor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Viktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -109,18 +117,18 @@
         }
       }
     },
-    "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj": {
+    "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Data\\CAS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Data\\CAS.Data.csproj",
         "projectName": "CAS.Data",
-        "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\CAS.Data.csproj",
-        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.Data\\obj\\",
+        "projectPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Data\\CAS.Data.csproj",
+        "packagesPath": "C:\\Users\\Viktor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Viktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -133,8 +141,8 @@
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj": {
-                "projectPath": "C:\\Users\\Professional\\source\\repos\\CASSln\\CAS.DataStorage\\CAS.DataStorage.csproj"
+              "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\CAS.DataStorage.csproj": {
+                "projectPath": "C:\\Users\\Viktor\\Desktop\\ConsultantsAndShopsTestApp\\CAS.DataStorage\\CAS.DataStorage.csproj"
               }
             }
           }

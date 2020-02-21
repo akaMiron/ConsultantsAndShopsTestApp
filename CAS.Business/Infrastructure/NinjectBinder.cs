@@ -15,6 +15,7 @@ namespace CAS.Business.Infrastructure
         {
             kernel.Bind<IStoreBusinessService>().To<StoreBusinessService>();
             kernel.Bind<IConsultantBusinessService>().To<ConsultantBusinessService>();
+            kernel.Bind<IAppointmentBusinessService>().To<AppointmentBusinessService>();
         }
     }
 }
