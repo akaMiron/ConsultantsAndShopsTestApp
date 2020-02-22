@@ -73,6 +73,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -182,6 +183,10 @@
     <ProjectReference Include="..\CAS.Business\CAS.Business.csproj">
       <Project>{C313E219-0B8F-4848-BF39-A72D1C50F7C0}</Project>
       <Name>CAS.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAS.Common\CAS.Common.csproj">
+      <Project>{D85B0B46-AD94-4BB9-A453-9D0F243532E6}</Project>
+      <Name>CAS.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\CAS.Data\CAS.Data.csproj">
       <Project>{620b1ff6-8821-463a-b14b-97c55fe37e83}</Project>

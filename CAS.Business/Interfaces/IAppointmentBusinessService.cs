@@ -10,5 +10,6 @@ namespace CAS.Business.Interfaces
     public interface IAppointmentBusinessService
     {
         AppointmentListsViewModel CreateListViewModel();
+        void AppointConsultant(AppointmentListsViewModel appointmentViewModel);
     }
 }

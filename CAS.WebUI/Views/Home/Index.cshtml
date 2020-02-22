@@ -57,11 +57,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <script type="text/javascript">
         var datatable = $('#table').DataTable({
-            "ajax": {
-                "url": '@Url.Action("GetData", "Store")',
-                "type": "GET",
-                "datatype": "json"
-            },
+            ajax: '@Url.Action("GetData", "Store")',
             columns: [
                 { "title": "#", "data": "Id", "name": "Id", "autowidth": true },
                 { "title": "Name", "data": "Name", "name": "Name", "autowidth": true },
@@ -76,7 +72,6 @@
             },
             searching: false,
             ordering: true,
-            order: [0, "asc"],
             processing: true,
             language: {
                 processing: "processing... please wait"

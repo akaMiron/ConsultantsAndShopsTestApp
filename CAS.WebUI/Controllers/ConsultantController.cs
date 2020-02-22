@@ -54,15 +54,9 @@ namespace CAS.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Appoint(AppointmentListsViewModel appointmentViewModel)
         {
-            // todo: move to service
-            // mb remove appoint service
             if (ModelState.IsValid)
             {
-                var consultant = _consultantBusinessService.GetConsultant(appointmentViewModel.BindModel.ConsultantId);
-                consultant.StoreId = appointmentViewModel.BindModel.StoreId;
-                consultant.AssignmentDate = DateTime.Now.ToString();
-
-                _consultantBusinessService.SaveConsultant(consultant);
+                _appointmentBusinessService.AppointConsultant(appointmentViewModel);
 
                 return Json(true, JsonRequestBehavior.AllowGet);
             }

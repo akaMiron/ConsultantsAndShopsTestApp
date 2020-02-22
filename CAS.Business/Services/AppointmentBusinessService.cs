@@ -1,5 +1,6 @@
 ﻿using CAS.Business.Interfaces;
 using CAS.Business.Models;
+using System;
 using System.Web.Mvc;
 
 namespace CAS.Business.Services
@@ -26,6 +27,15 @@ namespace CAS.Business.Services
             model.Stores = new SelectList(_storeBusinessService.GetStores(), "Id", "Name", model.BindModel.StoreId);
 
             return model;
+        }
+
+        public void AppointConsultant(AppointmentListsViewModel appointmentViewModel)
+        {
+            var consultant = _consultantBusinessService.GetConsultant(appointmentViewModel.BindModel.ConsultantId);
+            consultant.StoreId = appointmentViewModel.BindModel.StoreId;
+            consultant.AssignmentDate = DateTime.Now.ToString();
+
+            _consultantBusinessService.SaveConsultant(consultant);
         }
     }
 }

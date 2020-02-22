@@ -1,5 +1,0 @@
-C:\Users\Professional\source\repos\CASSln\CAS.Common\bin\Debug\CAS.Common.dll
-C:\Users\Professional\source\repos\CASSln\CAS.Common\bin\Debug\CAS.Common.pdb
-C:\Users\Professional\source\repos\CASSln\CAS.Common\obj\Debug\CAS.Common.csprojAssemblyReference.cache
-C:\Users\Professional\source\repos\CASSln\CAS.Common\obj\Debug\CAS.Common.dll
-C:\Users\Professional\source\repos\CASSln\CAS.Common\obj\Debug\CAS.Common.pdb

@@ -23,6 +23,7 @@ namespace CAS.WebUI.Controllers
         public ActionResult Create()
         {
             var store = new StoreModel();
+
             return PartialView("Create", store);
         }
 
@@ -56,20 +57,22 @@ namespace CAS.WebUI.Controllers
 
             var totalRecords = stores.Count();
 
-            List<StoreGridModel> gridRows = stores.Select(x => new StoreGridModel
+            IEnumerable<StoreGridModel> gridRows = stores.Select(x => new StoreGridModel
             {
                 Id = x.Id,
                 Name = x.Name,
                 Address = x.Address,
                 // todo: 
                 // workaroud, this is too slow
+                // DAL inner join
                 Consultant = consultants.Where(cons => cons.StoreId == x.Id).OrderByDescending(cons => cons.AssignmentDate).FirstOrDefault()?.FullName,
                 AssignmentDate = consultants.Where(cons => cons.StoreId == x.Id).OrderByDescending(cons => cons.AssignmentDate).FirstOrDefault()?.AssignmentDate
             }).OrderBy(sortColumnName + " " + sortDirection).ToList();
 
             gridRows = gridRows.Skip(start).Take(length).ToList();
 
-            return Json(new { data = gridRows, draw = Request["draw"], recordsTotal =  totalRecords, recordsFiltered = totalRecords }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = gridRows, draw = Request["draw"], recordsTotal = totalRecords, recordsFiltered = totalRecords },
+                JsonRequestBehavior.AllowGet);
         }
 
     }
