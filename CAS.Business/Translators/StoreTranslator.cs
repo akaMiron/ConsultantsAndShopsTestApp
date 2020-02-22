@@ -1,10 +1,5 @@
 ﻿using CAS.Business.Models;
 using CAS.Data.ProjectionModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CAS.Business.Translators
 {

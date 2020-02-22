@@ -1,12 +1,11 @@
 ﻿using CAS.Business;
 using CAS.Business.Interfaces;
 using CAS.Business.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Linq.Dynamic;
 
 namespace CAS.WebUI.Controllers
 {
@@ -21,93 +20,57 @@ namespace CAS.WebUI.Controllers
             _consultantBusinessService = consultantBusinessService;
         }
 
-
-
         public ActionResult Create()
         {
-            return PartialView("Create");
+            var store = new StoreModel();
+            return PartialView("Create", store);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(StoreModel storeModel)
+        public JsonResult Create(StoreModel storeModel)
         {
-            _storeBusinessService.SaveStore(storeModel);
+            if (ModelState.IsValid)
+            {
+                _storeBusinessService.SaveStore(storeModel);
 
-            return RedirectToAction("Index", "Home");
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(false, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public string GetData()
+        public JsonResult GetData()
         {
-            List<StoreGridModel> stores = new List<StoreGridModel>();
-            var storeModels = _storeBusinessService.GetStores().ToList();
+            // todo: move to common service
+            // create model for grid props
 
-            for (int i = 0, max = storeModels.Count(); i < max; i += 1)
+            int start = Convert.ToInt32(Request.QueryString["start"]);
+            int length = Convert.ToInt32(Request.QueryString["length"]);
+            string sortColumnName = Request.QueryString["columns[" + Request.QueryString["order[0][column]"] + "][name]"];
+            string sortDirection = Request.QueryString["order[0][dir]"];
+
+            var stores = _storeBusinessService.GetStores().ToList();
+            var consultants = _consultantBusinessService.GetConsultants();
+
+            var totalRecords = stores.Count();
+
+            List<StoreGridModel> gridRows = stores.Select(x => new StoreGridModel
             {
-                var consultant = _consultantBusinessService.GetConsultants()
-                    .Where(cons => cons.StoreId == storeModels[i].Id).OrderByDescending(cons => cons.AssignmentDate)
-                    .FirstOrDefault();
+                Id = x.Id,
+                Name = x.Name,
+                Address = x.Address,
+                // todo: 
+                // workaroud, this is too slow
+                Consultant = consultants.Where(cons => cons.StoreId == x.Id).OrderByDescending(cons => cons.AssignmentDate).FirstOrDefault()?.FullName,
+                AssignmentDate = consultants.Where(cons => cons.StoreId == x.Id).OrderByDescending(cons => cons.AssignmentDate).FirstOrDefault()?.AssignmentDate
+            }).OrderBy(sortColumnName + " " + sortDirection).ToList();
 
-                stores.Add(new StoreGridModel
-                {
-                    Id = storeModels[i].Id,
-                    Name = storeModels[i].Name,
-                    Address = storeModels[i].Address,
-                    Consultant = (consultant != null) ? consultant.Name + " " + consultant.LastName : "",
-                    AssignmentDate = (consultant != null) ? consultant.AssignmentDate : "" 
-                });
-            }
+            gridRows = gridRows.Skip(start).Take(length).ToList();
 
-            var json = JsonConvert.SerializeObject(stores);
-            return json;
+            return Json(new { data = gridRows, draw = Request["draw"], recordsTotal =  totalRecords, recordsFiltered = totalRecords }, JsonRequestBehavior.AllowGet);
         }
 
-
-        //public ActionResult Edit(int id)
-        //{
-        //    StoreModel storeModel = _storeBusinessService.GetStore(id);
-        //    if (storeModel != null)
-        //    {
-        //        return PartialView("EditStore", storeModel);
-        //    }
-
-        //    return View("Index");
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(StoreModel storeModel)
-        //{
-        //    _storeBusinessService.SaveStore(storeModel);
-
-        //    return RedirectToAction("Index");
-        //}
-
-        //public ActionResult Delete(int id)
-        //{
-        //    StoreModel storeModel = _storeBusinessService.GetStore(id);
-        //    if (storeModel != null)
-        //    {
-        //        return PartialView("Delete", storeModel);
-        //    }
-
-        //    return View("Index");
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //[ActionName("Delete")]
-        //public ActionResult DeleteRecord(int id)
-        //{
-        //    StoreModel storeModel = _storeBusinessService.GetStore(id);
-
-        //    if (storeModel != null)
-        //    {
-        //        _storeBusinessService.DeleteStore(id);
-        //    }
-
-        //    return RedirectToAction("Index");
-        //}
     }
 }

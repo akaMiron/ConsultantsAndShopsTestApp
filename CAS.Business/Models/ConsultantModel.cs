@@ -15,5 +15,11 @@ namespace CAS.Business.Models
         public string LastName { get; set; }
         public int? StoreId { get; set; }
         public string AssignmentDate { get; set; }
+
+        public string FullName { 
+            get {
+                return Name + " " + LastName;
+            } 
+        }
     }
 }

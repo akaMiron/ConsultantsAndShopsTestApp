@@ -1,10 +1,5 @@
 ﻿using CAS.Business.Interfaces;
 using CAS.Business.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace CAS.Business.Services
@@ -22,7 +17,6 @@ namespace CAS.Business.Services
 
         public AppointmentListsViewModel CreateListViewModel()
         {
-
             AppointmentListsViewModel model = new AppointmentListsViewModel
             {
                 BindModel = new AppointmentViewModel()

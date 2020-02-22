@@ -1,12 +1,9 @@
 ﻿using CAS.Business;
 using CAS.Business.Interfaces;
 using CAS.Business.Models;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+
 
 namespace CAS.WebUI.Controllers
 {
@@ -16,7 +13,7 @@ namespace CAS.WebUI.Controllers
         private IStoreBusinessService _storesBusinessService;
         private IAppointmentBusinessService _appointmentBusinessService;
 
-        public ConsultantController(IConsultantBusinessService consultantBusinessService, 
+        public ConsultantController(IConsultantBusinessService consultantBusinessService,
             IStoreBusinessService storesBusinessService,
             IAppointmentBusinessService appointmentBusinessService)
         {
@@ -27,16 +24,22 @@ namespace CAS.WebUI.Controllers
 
         public ActionResult Create()
         {
-            return PartialView("Create");
+            var consultant = new ConsultantModel();
+            return PartialView("Create", consultant);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ConsultantModel consultantModel)
+        public JsonResult Create(ConsultantModel consultantModel)
         {
-            _consultantBusinessService.SaveConsultant(consultantModel);
+            if (ModelState.IsValid)
+            {
+                _consultantBusinessService.SaveConsultant(consultantModel);
 
-            return RedirectToAction("Index", "Home");
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(false, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -51,21 +54,20 @@ namespace CAS.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Appoint(AppointmentListsViewModel appointmentViewModel)
         {
-            var consultant = _consultantBusinessService.GetConsultant(appointmentViewModel.BindModel.ConsultantId);
-            consultant.StoreId = appointmentViewModel.BindModel.StoreId;
-            consultant.AssignmentDate = DateTime.Now.ToString();
+            // todo: move to service
+            // mb remove appoint service
+            if (ModelState.IsValid)
+            {
+                var consultant = _consultantBusinessService.GetConsultant(appointmentViewModel.BindModel.ConsultantId);
+                consultant.StoreId = appointmentViewModel.BindModel.StoreId;
+                consultant.AssignmentDate = DateTime.Now.ToString();
 
-            _consultantBusinessService.SaveConsultant(consultant);
+                _consultantBusinessService.SaveConsultant(consultant);
 
-            return RedirectToAction("Index", "Home");
-        }
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
 
-        [HttpGet]
-        public string GetData()
-        {
-            var stores = _consultantBusinessService.GetConsultants().ToList();
-
-            return JsonConvert.SerializeObject(stores);
+            return Json(false, JsonRequestBehavior.AllowGet);
         }
     }
 }

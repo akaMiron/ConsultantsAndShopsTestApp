@@ -1,17 +1,39 @@
 ﻿@model CAS.Business.Models.AppointmentListsViewModel
 
-    <div>
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            <div>
-                @Html.LabelFor(model => model.BindModel.ConsultantId)
-                <p>@Html.DropDownListFor(model => model.BindModel.ConsultantId, Model.Consultants as SelectList)</p>
+<div class="modal-content">
+    <form name="appointmentForm">
+        @Html.AntiForgeryToken()
+        <div class="modal-header">
+            <h4 class="modal-title col-md-12">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <span>Appoint consultants</span>
+            </h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BindModel.ConsultantId, new { @class = "ml-3" })
+                        <div class="col-md-12">
+                            @Html.DropDownListFor(model => model.BindModel.ConsultantId, Model.Consultants as SelectList, new { @class = "form-control col-md-12", required = true })
+                            @Html.ValidationMessageFor(model => model.BindModel.ConsultantId, "")
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BindModel.ConsultantId, new { @class = "ml-3" })
+                        <div class="col-md-12">
+                            @Html.DropDownListFor(model => model.BindModel.StoreId, Model.Stores as SelectList, new { @class = "form-control col-md-12", required = true })
+                            @Html.ValidationMessageFor(model => model.BindModel.StoreId, "")
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                @Html.LabelFor(model => model.BindModel.StoreId)
-                <p>@Html.DropDownListFor(model => model.BindModel.StoreId, Model.Stores as SelectList)</p>
-            </div>
-            <p><input class="btn btn-primary" type="submit" value="Create" /></p>
-        }
-    </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="ml-auto btn btn-outline-danger" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-success" onclick="createEntity('appointment')">Save</button>
+        </div>
+    </form>
+</div>
